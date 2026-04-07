@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Portofolio</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" target="_blank">Home</a></li>
+                <li><a href="about.html" target="_blank">About</a></li>
+                <li><a href="service.html" target="_blank">Services</a></li>
+                <li><a href="projet.html" target="_blank">Projects</a></li>
+                <li><a href="contact.html"  target="_blank">Contact</a></li>
+                <div class="indicator"></div>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="user">
+            <div class="user-text">
+                <p class="user-subtitle">Bienvenue sur mon portfolio</p>
+                <h1 class="user-title">Bonjour, je suis <br> <span class="user-name">OURO-AGRIGNAN el-Saadath</span></h1>
+                <h2 class="user-role">Architecte des logiciels</h2>
+                <p class="user-description">Je crée des applications web et mobile modernes qui répondent aux besoins réels des utilisateurs. Architecte logiciel et gestionnaire de projets, j'accompagne mes clients du cahier des charges jusqu'au déploiement.</p>
+                <div class="user-buttons">
+                    <a href="#Projects" class="btn btn-primaire">Voir mes projets</a>
+                    <a href="#Contact" class="btn btn-second">Me contacter</a>
+                </div>
+                
+                <div class="user-socials">
+                    <a href="#" class="social-icon">Tiktok</a>
+                    <a href="#" class="social-icon">linkdIn</a>
+                    <a href="#" class="social-icon">faceBook</a>
+                </div>
+            </div>
+            <div class="user-photo">
+                <div class="photo-hors-cercle">
+                    <div class="photo-dans-cercle">
+                        <img src="./IMAGE/tof.jpeg" alt="Ma photo" class="photo-img">
+                    </div>
+                    <div class="photo-dot dot-1"></div>
+                    <div class="photo-dot dot-2"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="user-stats">
+            <div class="stat-item">
+                <p class="stat-number">10+</p>
+                <p class="stat-label">Projets realisés</p>
+            </div>
+            <div class="stat-item">
+                <p class="stat-number">3+</p>
+                <p class="stat-label">Ans d'experience</p>
+            </div>
+            <div class="stat-item">
+                <p class="stat-number">10+</p>
+                <p class="stat-label">Technologies maitrisées</p>
+            </div>
+
+        </div>
+    </main>
+     <script>
+        const items = document.querySelectorAll('.navbar ul li');
+        const indicator = document.querySelector('.indicator');
+        const list = document.querySelector('.navbar ul');
+
+        function depIndicator(element) {
+            const listReact = list.getBoundingClientRect();
+            const elementRect = element.getBoundingClientRect();
+            indicator.style.left = (elementRect.left - listrect.left) + 'px';
+            indicator.style.width = elementRect.width + 'px';
+
+        }
+
+        depIndicator(item[0]);
+
+        items.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                items.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+
+                depIndicator(item);
+            });
+        });
+     </script>
+</body>
+</html>

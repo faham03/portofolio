@@ -1,0 +1,489 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #0a0a0f;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: transparent;
+}
+.navbar {
+    position: relative;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 40px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border: 0.5px solid rgba(255, 255, 255, 0.12);
+
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    
+}
+.navbar ul li a {
+    display: block;
+    padding: 10px 22px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.9rem;
+    border-radius: 50px;
+    transition: color 0.3s;
+
+}
+.navbar ul li:hover a {
+    color: rgba(255, 255, 255, 0.95);
+
+}
+
+.navbar ul li {
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.navbar ul li:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.navbar ul li.active {
+    background: rgba(0, 200, 200, 0.15);
+}
+
+.navbar ul li.active a {
+    color: rgba(0, 220, 255, 0.9);
+}
+
+.indicator {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: calc(100% - 4px);
+    border-radius: 50px;
+    background: rgba(0, 200, 200, 0.25);
+    border: 1px solid rgba(0, 220, 255, 0.4);
+    transition: left 0.4s ease, width 0.4s ease;
+    pointer-events: none;
+
+}
+main {
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 60px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 0 40px;
+}
+.user-text {
+    flex: 1;
+}
+
+.user-subtitle {
+    font-size: 13px;
+    color: rgba(0, 220, 255, 0.8);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+.user-title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.user-name {
+    color: rgba(0, 220, 255, 0.9);
+}
+.user-role {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 20px;
+}
+
+.user-description {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.8;
+    max-width: 400px;
+    margin-bottom: 32px;
+}
+.user-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+
+.btn {
+    padding: 12px 28px ;
+    border-radius: 50px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+}
+
+.btn-primaire {
+    background: rgba(0, 200, 220, 0.2);
+    border: 1px solid rgba(0, 220, 255, 0.5);
+    color: rgba(0, 220, 255, 0.9);
+}
+.btn-primaire:hover {
+    background: rgba(0, 200, 220, 0.35);
+}
+
+.btn-second {
+    background: rgba(255, 255, 255, 0.05);
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.6);
+}
+.btn-second:hover {
+    background: rgba(255, 255, 255, 0.1);
+    
+}
+
+.user-socials {
+    display: flex;
+    gap: 16px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.social-icon:hover {
+    border-color: rgba(0, 220, 255, 0.5);
+    color: rgba(0, 220, 255, 0.8);
+}
+
+.user-photo {
+    flex: 0 0 auto;
+}
+
+.photo-hors-cercle {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 220, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.photo-dans-cercle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 220, 255, 0.3);
+    background: rgba(0, 200, 220, 0.1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-placeholder {
+    font-size: 60px;
+    font-weight: 700;
+    color: rgba(0, 220, 255, 0.7);
+}
+
+.photo-dot {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 220, 255, 0.7);
+}
+
+.dot-1 {
+    width: 10px;
+    height: 10px;
+    top: 10px;
+    right: 10px;
+}
+
+.dot-2 {
+    width: 6px;
+    height: 6px;
+    bottom: 20px;
+    left: 5px;
+    background: rgba(0, 220, 255, 0.4);
+
+}
+
+.user-stats {
+    display: flex;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.07);
+    padding-top: 32px;
+    width: 100%;
+}
+
+.stat-item {
+    flex: 1;
+    text-align: center;
+    padding: 16px;
+    border-right: 0.5px solid rgba(255, 255, 255, 0.07);
+}
+
+.stat-item:last-child {
+    border-right: none;
+    
+}
+
+.stat-number {
+    font-size: 26px;
+    font-weight: 700;
+    color: rgba(0, 220, 255, 0.9);
+    margin-bottom: 4px;
+}
+.stat-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+/* ############ About Page CSS ############ */
+
+.about-header {
+    text-align: center;
+    padding: 40px 0 30px;
+}
+
+.about-subtitle {
+    font-size: 11px;
+    color: rgba(0, 220, 255, 0.8);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+.about-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.about-title-accent {
+    color: rgba(0, 220, 255, 0.9);
+
+}
+.about-divider {
+    width: 50px;
+    height: 2px;
+    background: rgba(0, 220, 255, 0.5);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+.about-content {
+    display: flex;
+    gap: 40px;
+    padding: 0 60px;
+    align-items: flex-start;
+
+}
+.about-left {
+    flex: 0 0 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.about-photo-outer {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 220, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.about-photo-inner {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 220, 255, 0.3);
+    background: rgba(0, 200, 220, 0.8);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.about-photo-img {
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-photo-dot {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.about-photo-dot.dot-1 {
+    width: 9px;
+    height: 9px;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 220, 255, 0.8);
+}
+.about-photo-dot.dot-2 {
+    width: 6px;
+    height: 6px;
+    bottom: 18px;
+    left: 6px;
+    background: rgba(0, 220, 255, 0.4);
+}
+
+.about-identity {
+    text-align: center;
+}
+.about-identity-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 4px;
+}
+.about-identity-role {
+    font-size: 12px;
+    color: rgba(0, 220, 255, 0.7);
+    margin: 0;
+}
+
+.about-infos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.about-info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border: 0.5px solid rgba(255, 255, 255, 0.07);
+
+}
+
+.info-label {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.info-value {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.75);
+}
+.info-available {
+    color: rgba(0, 220, 100, 0.8);
+}
+
+.about-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.about-block-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(0, 220, 255, 0.9);
+    margin: 0 0 12px;
+}
+
+.about-block-text {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.9;
+    margin: 0;
+}
+
+.formations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.formation-item {
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border-left: 2px solid rgba(0, 220, 255, 0.5);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.65);
+    transition: background 0.3s ease;
+}
+
+.formation-item:hover {
+    background: rgba(0, 220, 255, 0.05);
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.skill-badge {
+    padding: 6px 14px;
+    background: rgba(0, 200, 220, 0.1);
+    border: 0.5px solid rgba(0, 220, 255, 0.3);
+    border-radius: 50%;
+    font-size: 11px;
+    color: rgba(0, 220, 255, 0.8);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+.skill-badge:hover {
+    background: rgba(0, 200, 220, 0.25);
+    border-color:  rgba(0, 220, 255, 0.6);
+}

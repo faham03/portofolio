@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Portofolio</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" target="_blank">Home</a></li>
+                <li class="active"><a href="about.html" target="_blank">About</a></li>
+                <li><a href="service.html" target="_blank">Services</a></li>
+                <li><a href="projet.html" target="_blank">Projects</a></li>
+                <li><a href="contact.html"  target="_blank">Contact</a></li>
+                <div class="indicator"></div>
+            </ul>
+        </nav>
+    </header>
+   <main>
+    <div class="about-header">
+        <p class="about-subtitle">Qui suis-je ?</p>
+        <h2 class="about-title">À propos <span class="about-title-accent">de moi</span></h2>
+        <div class="about-divider"></div>
+    </div>
+
+    <div class="about-content">
+        <div class="about-left">
+            <div class="about-photo-outer">
+                <div class="about-photo-inner">
+                    <img src="./IMAGE/tof.jpeg" alt="Ma photo" class="about-photo-img">
+                </div>
+                <div class="about-photo-dot dot-1"></div>
+                <div class="about-photo-dot dot-2"></div>
+            </div>
+            <div class="about-identity">
+                <p class="about-identity-name">OURO-AGRIGNAN el-Saadath</p>
+                <p class="about-identity-role">Architecte des logiciels</p>
+            </div>
+            <div class="about-infos">
+                <div class="about-info-item">
+                    <span class="info-label">Localisation</span>
+                    <span class="info-value">Lomé, Togo</span>
+                </div>
+                <div class="about-info-item">
+                    <span class="info-label">Disponibilité</span>
+                    <span class="info-value info-available">Disponible</span>
+                </div>
+                <div class="about-info-item">
+                    <span class="info-label">Expérience</span>
+                    <span class="info-value">3+ ans</span>
+                </div>
+                <div class="about-info-item">
+                    <span class="info-label">Langues</span>
+                    <span class="info-value">FR / EN</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="about-right">
+            <div class="about-block">
+                <h3 class="about-block-title">Mon parcours</h3>
+                <p class="about-block-text">
+                    Développeur web et logiciel, chef de projets et community manager, 
+                    je combine des compétences techniques et créatives pour offrir des 
+                    solutions numériques complètes. Formé en marketing digital, maintenance 
+                    informatique et design graphique (CorelDraw), j'interviens aussi dans 
+                    le sourcing de produits en Chine via Alibaba et autres plateformes 
+                    internationales.
+                </p>
+            </div>
+            <div class="about-block">
+                <h3 class="about-block-title">Formations</h3>
+                <div class="formations-list">
+                    <div class="formation-item">
+                        <span>Développement d'applications web &amp; logicielles</span>
+                    </div>
+                    <div class="formation-item">
+                        <span>Gestion de projets</span>
+                    </div>
+                    <div class="formation-item">
+                        <span>Marketing digital &amp; Community management</span>
+                    </div>
+                    <div class="formation-item">
+                        <span>Maintenance informatique</span>
+                    </div>
+                    <div class="formation-item">
+                        <span>Design graphique — CorelDraw</span>
+                    </div>
+                    <div class="formation-item">
+                        <span>Importation produits Chine — Alibaba &amp; plateformes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-block">
+                <h3 class="about-block-title">Compétences techniques</h3>
+                <div class="skills-list">
+                    <span class="skill-badge">HTML</span>
+                    <span class="skill-badge">CSS</span>
+                    <span class="skill-badge">JavaScript</span>
+                    <span class="skill-badge">React</span>
+                    <span class="skill-badge">Python</span>
+                    <span class="skill-badge">Flask</span>
+                    <span class="skill-badge">Django</span>
+                    <span class="skill-badge">FastAPI</span>
+                    <span class="skill-badge">PostgreSQL</span>
+                    <span class="skill-badge">Git</span>
+                    <span class="skill-badge">CorelDraw</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+     <script>
+        const items = document.querySelectorAll('.navbar ul li');
+        const indicator = document.querySelector('.indicator');
+        const list = document.querySelector('.navbar ul');
+
+        function depIndicator(element) {
+            const listReact = list.getBoundingClientRect();
+            const elementRect = element.getBoundingClientRect();
+            indicator.style.left = (elementRect.left - listrect.left) + 'px';
+            indicator.style.width = elementRect.width + 'px';
+
+        }
+
+        depIndicator(item[0]);
+
+        items.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                items.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+
+                depIndicator(item);
+            });
+        });
+     </script>
+</body>
+</html>

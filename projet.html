@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Portofolio</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" target="_blank">Home</a></li>
+                <li><a href="about.html" target="_blank">About</a></li>
+                <li><a href="service.html" target="_blank">Services</a></li>
+                <li><a href="projet.html" target="_blank">Projects</a></li>
+                <li><a href="contact.html"  target="_blank">Contact</a></li>
+                <div class="indicator"></div>
+            </ul>
+        </nav>
+    </header>
+     <script>
+        const items = document.querySelectorAll('.navbar ul li');
+        const indicator = document.querySelector('.indicator');
+        const list = document.querySelector('.navbar ul');
+
+        function depIndicator(element) {
+            const listReact = list.getBoundingClientRect();
+            const elementRect = element.getBoundingClientRect();
+            indicator.style.left = (elementRect.left - listrect.left) + 'px';
+            indicator.style.width = elementRect.width + 'px';
+
+        }
+
+        depIndicator(item[0]);
+
+        items.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                items.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+
+                depIndicator(item);
+            });
+        });
+     </script>
+</body>
+</html>
