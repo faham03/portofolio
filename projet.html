@@ -13,7 +13,7 @@
                 <li><a href="index.html" target="_blank">Home</a></li>
                 <li><a href="about.html" target="_blank">About</a></li>
                 <li><a href="service.html" target="_blank">Services</a></li>
-                <li><a href="projet.html" target="_blank">Projects</a></li>
+                <!-- <li><a href="projet.html" target="_blank">Projects</a></li> -->
                 <li><a href="contact.html"  target="_blank">Contact</a></li>
                 <div class="indicator"></div>
             </ul>
@@ -43,6 +43,9 @@
                 depIndicator(item);
             });
         });
+        window.addEventListener('resize', () => {
+        const active = document.querySelector('.navbar ul il.active')
+        if (active) depIndicator(active);});
      </script>
 </body>
 </html>

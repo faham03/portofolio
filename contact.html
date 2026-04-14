@@ -13,36 +13,149 @@
                 <li><a href="index.html" target="_blank">Home</a></li>
                 <li><a href="about.html" target="_blank">About</a></li>
                 <li><a href="service.html" target="_blank">Services</a></li>
-                <li><a href="projet.html" target="_blank">Projects</a></li>
+               <!-- <li><a href="projet.html" target="_blank">Projects</a></li> -->
                 <li><a href="contact.html"  target="_blank">Contact</a></li>
                 <div class="indicator"></div>
             </ul>
         </nav>
     </header>
-     <script>
-        const items = document.querySelectorAll('.navbar ul li');
-        const indicator = document.querySelector('.indicator');
-        const list = document.querySelector('.navbar ul');
+    <main>
+        <div class="contact-header">
+            <p class="contact-subtitle">Travaillons ensemble</p>
+            <h2 class="contact-title">Me <span class="contact-title-accent">contacter</span></h2>
+            <div class="contact-divider"></div>
+        </div>
 
-        function depIndicator(element) {
-            const listReact = list.getBoundingClientRect();
-            const elementRect = element.getBoundingClientRect();
-            indicator.style.left = (elementRect.left - listrect.left) + 'px';
-            indicator.style.width = elementRect.width + 'px';
+        <div class="contact-content">
+            <div class="contact-left">
+                <p class="contact-intro">
+                    Tu as un projet en tête ? Une question ? N'hésite pas à me contacter, 
+                    je te répondrai dans les plus brefs délais.
+                </p>
 
+                <div class="contact-infos">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">@</div>
+                        <div class="contact-info-text">
+                            <span class="contact-info-label">Email</span>
+                            <span class="contact-info-value">ouroelsaadath@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">☎</div>
+                        <div class="contact-info-text">
+                            <span class="contact-info-label">Téléphone</span>
+                            <span class="contact-info-value">+228 90025463</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">⌖</div>
+                        <div class="contact-info-text">
+                            <span class="contact-info-label">Localisation</span>
+                            <span class="contact-info-value">Lomé, Togo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-socials">
+                    <p class="contact-socials-label">Réseaux sociaux</p>
+                    <div class="contact-socials-links">
+                        <a href="https://tiktok.com/@" target="_blank" class="contact-social-btn">TikTok</a>
+                        <a href="https://linkedin.com/in/" target="_blank" class="contact-social-btn">LinkedIn</a>
+                        <a href="https://facebook.com/" target="_blank" class="contact-social-btn">Facebook</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-right">
+                <div class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="nom">Nom complet</label>
+                            <input type="text" id="nom" class="form-input" placeholder="Votre nom...">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email</label>
+                            <input type="email" id="email" class="form-input" placeholder="Votre email...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="sujet">Sujet</label>
+                        <input type="text" id="sujet" class="form-input" placeholder="Sujet de votre message...">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="message">Message</label>
+                        <textarea id="message" class="form-textarea" placeholder="Votre message..." rows="6"></textarea>
+                    </div>
+
+                    <div class="form-submit">
+                        <button class="btn-send" id="btnEnvoyer">
+                            Envoyer le message →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+    const items = document.querySelectorAll('.navbar ul li');
+    const indicator = document.querySelector('.indicator');
+    const list = document.querySelector('.navbar ul');
+
+    function depIndicator(element) {
+        const listRect = list.getBoundingClientRect();
+        const elementRect = element.getBoundingClientRect();
+        indicator.style.left = (elementRect.left - listRect.left) + 'px';
+        indicator.style.width = elementRect.width + 'px';
+    }
+
+    depIndicator(items[0]);
+
+    items.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            items.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+            depIndicator(item);
+        });
+    });
+
+    window.addEventListener('resize', () => {
+        const active = document.querySelector('.navbar ul li.active');
+        if (active) depIndicator(active);
+    });
+
+    const btnEnvoyer = document.getElementById('btnEnvoyer');
+    btnEnvoyer.addEventListener('click', () => {
+        const nom = document.getElementById('nom').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const sujet = document.getElementById('sujet').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!nom || !email || !sujet || !message) {
+            alert('Veuillez remplir tous les champs !');
+            return;
         }
 
-        depIndicator(item[0]);
+        const texteWhatsApp =
+            `Bonjour, je m'appelle ${nom}` + '\n' +
+            `Email : ${email}` + '\n' +
+            `Sujet : ${sujet}` + '\n\n' +
+            `Message :` + '\n' +
+            `${message}`;
 
-        items.forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.preventDefault();
-                items.forEach(i => i.classList.remove('active'));
-                item.classList.add('active');
+        const numeroWhatsApp = '22890025463';
+        const messageEncode = encodeURIComponent(texteWhatsApp);
 
-                depIndicator(item);
-            });
-        });
-     </script>
-</body>
+        window.open(
+            `https://wa.me/${numeroWhatsApp}?text=${messageEncode}`,
+            '_blank'
+        );
+    });
+</script>
+ </body>
 </html>

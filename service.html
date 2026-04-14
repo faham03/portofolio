@@ -13,12 +13,132 @@
                 <li><a href="index.html" target="_blank">Home</a></li>
                 <li><a href="about.html" target="_blank">About</a></li>
                 <li><a href="service.html" target="_blank">Services</a></li>
-                <li><a href="projet.html" target="_blank">Projects</a></li>
+                <!-- <li><a href="projet.html" target="_blank">Projects</a></li> -->
                 <li><a href="contact.html"  target="_blank">Contact</a></li>
                 <div class="indicator"></div>
             </ul>
         </nav>
     </header>
+
+    <main>
+        <div class="services-header">
+            <p class="services-subtitle">Ce que je propose</p>
+            <h2 class="services-title"> Mes <span class="services-title-accent">Services</span> </h2>
+            <div class="services-divider"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="./IMAGE/services/dev.jpg" alt="Développement Web" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">Développement Web &amp; App</h3>
+                    <p class="card-desc">  conception et développement d'applications web et mobile modernes avec les technologies à la tendance</p>
+                    <div class="card-tags">
+                        <span class="tags">HTML/CSS</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">Django</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="./IMAGE/services/maintenance informatique.jpg" alt="Maintenance Informatique" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">Maintenance Informatique</h3>
+                    <p class="card-desc"> Dépannage, réparation et entretien de matériels informatiques. Installation et configuration des systèmes</p>
+                    <div class="card-tags">
+                        <span class="tags">Hardware</span>
+                        <span class="tag">Software</span>
+                        <span class="tag">Réseau</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="./IMAGE/services/reseaux2.jpg" alt="Réseaux" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">Réseaux &amp; Infrastructures</h3>
+                    <p class="card-desc"> Mise en place et configuration de réseaux locaux, Wifi, routeurs et infrastructures informatique</p>
+                    <div class="card-tags">
+                        <span class="tags">WiFi</span>
+                        <span class="tag">LAN</span>
+                        <span class="tag">Mikrotik</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <img src="./IMAGE/services/montagev.jpg" alt="Production Audiovisuelle" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">Production Audiovisuelle</h3>
+                    <p class="card-desc"> Réalisation et montage de clips, films et séries. Production audiovisuelle professionnelle</p>
+                    <div class="card-tags">
+                        <span class="tags">Montage</span>
+                        <span class="tag">Clips</span>
+                        <span class="tag">Films</span>
+                        <span class="tag">Séries</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="./IMAGE/services/designGraphisme.jpg" alt="Infographie" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title"> Infogrqphie &amp; Design</h3>
+                    <p class="card-desc"> Création de visuels, flyers, logos et contenus graphiques professionnels pour projets</p>
+                    <div class="card-tags">
+                        <span class="tags">CorelsDraw</span>
+                        <span class="tag">Flyers</span>
+                        <span class="tag">Logos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="./IMAGE/services/gestion de projet.jpg" alt="Gestion de Projets" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title"> Gestion de Projets</h3>
+                    <p class="card-desc"> Accompagnement, suivi et pilotage de vos projets de A à Z. Mise en place de business plan</p>
+                    <div class="card-tags">
+                        <span class="tags">Business plan</span>
+                        <span class="tag">Suivi</span>
+                        <span class="tag">Conseil</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="./IMAGE/services/marketing digital.jpg" alt="Marketing Digital" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">Marketing Digital</h3>
+                    <p class="card-desc"> Gestion de vos réseaux sociaux, stratégie digitale et community management pour booster votre visibilité.</p>
+                    <div class="card-tags">
+                        <span class="tags">Social Media</span>
+                        <span class="tag">SEO</span>
+                        <span class="tag">Contenu</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="./IMAGE/services/Import-Export.jpg" alt="Commerce &amp; Inportation" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">Commerce &amp; Inportation</h3>
+                    <p class="card-desc"> Accompagnement dans le commerce général et l'importation de produits depuis la chine via Alibaba et Plateformes</p>
+                    <div class="card-tags">
+                        <span class="tags">Alibaba</span>
+                        <span class="tag">import</span>
+                        <span class="tag">Commerce</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card" classe="service-cta">
+                <p class="cta-text"> Tu as un projet qui ne rentre pas dans cette categories ?</p>
+                <a href="contact.html" class="cta-btn">Contacte-moi</a>
+            </div>
+        </div>
+    </main>
      <script>
         const items = document.querySelectorAll('.navbar ul li');
         const indicator = document.querySelector('.indicator');
@@ -43,6 +163,10 @@
                 depIndicator(item);
             });
         });
+
+        window.addEventListener('resize', () => {
+        const active = document.querySelector('.navbar ul il.active')
+        if (active) depIndicator(active);});
      </script>
 </body>
 </html>
