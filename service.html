@@ -153,18 +153,21 @@
 
         }
 
-        depIndicator(item[0]);
+       const activeItem = document.querySelector('.navbar ul li.active');
+        if (activeItem) {
+            depIndicator(activeItem);
+        } else {
+            depIndicator(items[0]);
+        }
 
         items.forEach(item => {
             item.addEventListener('click', (e) => {
-                e.preventDefault();
                 items.forEach(i => i.classList.remove('active'));
                 item.classList.add('active');
 
                 depIndicator(item);
             });
         });
-
         window.addEventListener('resize', () => {
         const active = document.querySelector('.navbar ul il.active')
         if (active) depIndicator(active);});
